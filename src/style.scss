@@ -1,6 +1,50 @@
-$primary-color: white;
-$bg: black;
+$primary-color: black;
+$bg-body: linear-gradient(to right, #ffefba, #ffffff);;
+$container: 400px;
+$elementHeight: 30px;
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  height: 100%;
+  width: 100%;
   color: $primary-color;
-  background-color: $bg;
+  background: $bg-body;
+  padding: 0px;
+  margin: 0px;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  .log-in-form {
+    width: $container;
+    height: $container;
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 4px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    &__content {
+      &_styled {
+        width: 85%;
+        height: $elementHeight;
+        margin: 30px auto;
+        font-size: 17px;
+      }
+      &-input {
+
+      }
+      &-button {
+
+      }
+    }
+  }
 }
