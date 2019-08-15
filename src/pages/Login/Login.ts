@@ -1,8 +1,7 @@
 import createInput from '../../components/widgets/Input/Input';
 import createForm from '../../components/widgets/Form/Form';
 import createButton from '../../components/widgets/Button/Button';
-
-import addChild from '../../utils/addChild/index';
+import createElementWithAttrs from '../../utils/createElementWithAttrs/index';
 
 export default function Login() {
     interface InputField {
@@ -11,40 +10,48 @@ export default function Login() {
         type: string;
         required: boolean;
         onChangeHandler: any;
+        placeholder: string;
     }
 
-    interface FormLogin {
-        name: string
-    }
-
-    const form: any = createForm();
-
-    const fields: InputField[] = [
+    const InputFields: InputField[] = [
         {
             name: 'input',
-            class: 'log-in-form__content-input',
+            class: 'login-form__content-input login-form__content_styled',
             type: 'email',
             required: true,
-            onChangeHandler: 'asd'
+            onChangeHandler: 'asd',
+            placeholder: 'Email'
         },
         {
             name: 'input',
-            class: 'log-in-form__content-input',
+            class: 'login-form__content-input login-form__content_styled',
             type: 'password',
             required: true,
-            onChangeHandler: 'asd'
-        },
-    ]
-
-    const formAttrs: FormLogin[] = [
-        {
-            name: 'form',
+            onChangeHandler: 'asd',
+            placeholder: 'Password'
         }
     ]
+    const Form: any = createElementWithAttrs({
+        name: 'form',
+        class: 'login-form'
+    })(createForm());
 
-    fields.map((fieldAttrs: object) => {
+    const Button: any = createElementWithAttrs({
+        name: 'button',
+        type: 'submit',
+        class: 'login-form__content-button login-form__content_styled',
+        content: 'Login'
+    })(createButton());
 
+    Button.appendChild(document.createTextNode('Login'));
+
+    InputFields.map((fieldAttrs: object) => {
+        Form.appendChild(createElementWithAttrs(fieldAttrs)(createInput()))
     })
 
-    return;
+    Form.appendChild(Button);
+
+    return function(parentNode: any) {
+        parentNode.appendChild(Form)
+    };
 }
