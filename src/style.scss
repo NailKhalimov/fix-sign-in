@@ -1,11 +1,12 @@
 $primary-color: black;
-$bg-body: linear-gradient(to right, #ffefba, #ffffff);;
+$bg-body: linear-gradient(to right, #FFFFFF, #ECE9E6);
 $container: 400px;
-$elementHeight: 50px;
+$elementHeight: 40px;
 
 html {
   height: 100%;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -24,7 +25,6 @@ body {
     width: $container;
     min-height: 250px;
     max-height: 350px;
-    background: linear-gradient(to right, #d3cce3, #e9e4f0);
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -33,6 +33,12 @@ body {
     flex-wrap: nowrap;
     border-radius: 4px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    background-color: #fff;
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+    }
     &__content {
       &_styled {
         width: 85%;
@@ -44,11 +50,27 @@ body {
         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
       }
       &-input {
-        padding: 5px;
+        padding: 10px;
+        &:valid {
+          background: url(./assets/success.png);
+          background-size: 20px;
+          background-repeat: no-repeat;
+          background-position: 95% 20px;
+          background-color: #fff;
+        }
       }
       &-button {
         width: 50%;
+        height: 50px;
+        background: #3CB371
       }
     }
   }
+}
+
+button:focus {
+  outline:0;
+}
+input:focus {
+  outline:0;
 }

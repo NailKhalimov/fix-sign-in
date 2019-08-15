@@ -11,6 +11,7 @@ export default function Login() {
         required: boolean;
         onChangeHandler: any;
         placeholder: string;
+        autofocus: boolean;
     }
 
     const InputFields: InputField[] = [
@@ -20,7 +21,8 @@ export default function Login() {
             type: 'email',
             required: true,
             onChangeHandler: 'asd',
-            placeholder: 'Email'
+            placeholder: 'Email',
+            autofocus: true
         },
         {
             name: 'input',
@@ -28,7 +30,8 @@ export default function Login() {
             type: 'password',
             required: true,
             onChangeHandler: 'asd',
-            placeholder: 'Password'
+            placeholder: 'Password',
+            autofocus: false
         }
     ]
     const Form: any = createElementWithAttrs({
