@@ -1,5 +1,5 @@
 import './style.scss';
 import Login from './pages/Login/Login';
 
-const app: any = document.getElementById('app');
-Login()(app);
+const application = document.getElementById('app') as HTMLElement;
+Login()(application);
