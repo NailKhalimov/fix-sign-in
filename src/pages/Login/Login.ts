@@ -45,6 +45,11 @@ export default function Login() {
 
     Button.appendChild(document.createTextNode('Login'));
 
+    const Text = document.createElement('h1');
+    Text.appendChild(document.createTextNode('Login'))
+
+    Form.appendChild(Text)
+
     InputFields.map((fieldAttrs: object) => {
         Form.appendChild(createElementWithAttrs(fieldAttrs)(createInput()))
     })
